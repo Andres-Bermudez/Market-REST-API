@@ -16,4 +16,5 @@ En este proyecto se usa Gradle como gestor de dependencias.
 5. Crear una base de datos en PostgreSQL.
 6. Crear el esquema de la base de datos e insertar datos.
 7. Agregar el driver de PostgreSQL.
-8. Conectar la aplicacion con la base de datos.
+8. Conectar la aplicacion a la base de datos.
+9. Creacion de las entidades en Java utilizando JPA.
