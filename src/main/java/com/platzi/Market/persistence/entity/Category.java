@@ -1,14 +1,21 @@
 package com.platzi.Market.persistence.entity;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
+import java.util.List;
 
 public class Category {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_category")
     private Long idCategory;
 
     private String description;
     private Boolean status;
+
+    // Relacion de uno a muchos entre dos tablas.
+    @OneToMany(mappedBy = "category")
+    private List<Product> products;
 
     // Getters and Setters
 

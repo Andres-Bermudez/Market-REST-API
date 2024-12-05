@@ -1,5 +1,8 @@
 # Market
 
+- Esquema de la base de datos:
+![schemaDB.png](images/schemaDB.png)
+
 Este proyecto esta creado con una arquitectura por capas
 orientada al dominio.
 
@@ -18,3 +21,5 @@ En este proyecto se usa Gradle como gestor de dependencias.
 7. Agregar el driver de PostgreSQL.
 8. Conectar la aplicacion a la base de datos.
 9. Creacion de las entidades en Java utilizando JPA.
+10. Crear una entidad con clave primaria compuesta.
+11. Creacion de las relaciones entre las tablas.

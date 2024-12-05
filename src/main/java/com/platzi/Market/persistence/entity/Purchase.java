@@ -1,8 +1,8 @@
 package com.platzi.Market.persistence.entity;
 
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "purchases")
@@ -22,8 +22,16 @@ public class Purchase {
     private String paymentMethod;
 
     private String comment;
-
     private String status;
+
+    // Creacion de la relacion de muchos a uno entre dos tablas.
+    @ManyToOne
+    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
+    private Customer customer;
+
+    // Creacion de la relacion de uno a muchos entre dos tablas.
+    @OneToMany(mappedBy = "purchase")
+    private List<PurchaseProduct> purchasesProducts;
 
     // Getters and Setters
 
