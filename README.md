@@ -26,3 +26,4 @@ En este proyecto se usa Gradle como gestor de dependencias.
 12. Creacion de los repositorios para interactuar con la base de datos
     mediante JPA.
 13. Utilizacion de Query Methods para realizar consultas SQL.
+14. Configurar la conexion con la base de datos por medio de variables de entorno.
