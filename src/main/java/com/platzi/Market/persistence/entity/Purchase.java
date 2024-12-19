@@ -2,7 +2,6 @@ package com.platzi.Market.persistence.entity;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Table(name = "purchases")
@@ -13,8 +12,10 @@ public class Purchase {
     @Column(name = "id_purchase")
     private Long idPurchase;
 
-    @Column(name = "id_customer")
-    private String idCustomer;
+    // Creacion de la relacion de muchos a uno entre dos tablas.
+    @ManyToOne
+    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
+    private Customer customer;
 
     private LocalDateTime date;
 
@@ -23,15 +24,6 @@ public class Purchase {
 
     private String comment;
     private String status;
-
-    // Creacion de la relacion de muchos a uno entre dos tablas.
-    @ManyToOne
-    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    private Customer customer;
-
-    // Creacion de la relacion de uno a muchos entre dos tablas.
-    @OneToMany(mappedBy = "purchase")
-    private List<PurchaseProduct> purchasesProducts;
 
     // Getters and Setters
 
@@ -43,12 +35,12 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public String getIdCustomer() {
-        return idCustomer;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setIdCustomer(String idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     public LocalDateTime getDate() {

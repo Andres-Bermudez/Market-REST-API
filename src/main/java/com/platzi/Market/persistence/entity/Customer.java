@@ -1,7 +1,6 @@
 package com.platzi.Market.persistence.entity;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "customers")
@@ -19,9 +18,6 @@ public class Customer {
     private String address;
     private String email;
 
-    // Creacion de la relacion de uno a muchos entre dos tablas.
-    @OneToMany(mappedBy = "customer")
-    private List<Purchase> purchases;
 
     // Getters and Setters.
 

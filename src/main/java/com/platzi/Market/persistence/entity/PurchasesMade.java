@@ -3,8 +3,8 @@ package com.platzi.Market.persistence.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "purchases_products")
-public class PurchaseProduct {
+@Table(name = "purchases_made")
+public class PurchasesMade {
 
     // Como la clave primaria de esta entidad es compuesta, se debe crear un clase aparte que
     // contenga las dos columnas de la clave primaria y anotar esa clase como @Embeddable e
@@ -12,10 +12,6 @@ public class PurchaseProduct {
     // la clave primaria y anotarla con @EmbededId.
     @EmbeddedId
     private PurchaseProductPK id;
-
-    private Integer quantity;
-    private Double total;
-    private Boolean status;
 
     // Creacion de la relacion de muchos a uno entre dos tablas.
     @ManyToOne
@@ -26,6 +22,10 @@ public class PurchaseProduct {
     @ManyToOne
     @JoinColumn(name = "id_product", insertable = false, updatable = false)
     private Product product;
+
+    private Integer quantity;
+    private Double total;
+    private Boolean status;
 
     // Getters and Setters
 

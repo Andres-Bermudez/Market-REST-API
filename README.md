@@ -23,3 +23,6 @@ En este proyecto se usa Gradle como gestor de dependencias.
 9. Creacion de las entidades en Java utilizando JPA.
 10. Crear una entidad con clave primaria compuesta.
 11. Creacion de las relaciones entre las tablas.
+12. Creacion de los repositorios para interactuar con la base de datos
+    mediante JPA.
+13. Utilizacion de Query Methods para realizar consultas SQL.

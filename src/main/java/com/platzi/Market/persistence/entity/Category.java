@@ -1,8 +1,9 @@
 package com.platzi.Market.persistence.entity;
 
 import jakarta.persistence.*;
-import java.util.List;
 
+@Entity
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -13,9 +14,6 @@ public class Category {
     private String description;
     private Boolean status;
 
-    // Relacion de uno a muchos entre dos tablas.
-    @OneToMany(mappedBy = "category")
-    private List<Product> products;
 
     // Getters and Setters
 

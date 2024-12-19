@@ -1,7 +1,6 @@
 package com.platzi.Market.persistence.entity;
 
 import jakarta.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -14,8 +13,10 @@ public class Product {
 
     private String name;
 
-    @Column(name = "id_category")
-    private Long idCategory;
+    // Creacion de la relacion muchos a uno entre dos tablas.
+    @ManyToOne
+    @JoinColumn(name = "id_category", insertable = false, updatable = false)
+    private Category category;
 
     @Column(name = "bar_code")
     private String barCode;
@@ -28,14 +29,6 @@ public class Product {
 
     private Boolean status;
 
-    // Creacion de la relacion muchos a uno entre dos tablas.
-    @ManyToOne
-    @JoinColumn(name = "id_category", insertable = false, updatable = false)
-    private Category category;
-
-    // Creacion de la relacion de uno a muchos entre dos tablas.
-    @OneToMany(mappedBy = "product")
-    private List<PurchaseProduct> purchasesProducts;
 
     // Getters and Setters
 
@@ -55,12 +48,12 @@ public class Product {
         this.name = name;
     }
 
-    public Long getIdCategory() {
-        return idCategory;
+    public Category getCategory() {
+        return category;
     }
 
-    public void setIdCategory(Long idCategory) {
-        this.idCategory = idCategory;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getBarCode() {
