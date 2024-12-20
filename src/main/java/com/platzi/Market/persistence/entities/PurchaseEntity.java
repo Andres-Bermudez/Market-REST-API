@@ -1,11 +1,11 @@
-package com.platzi.Market.persistence.entity;
+package com.platzi.Market.persistence.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "purchases")
-public class Purchase {
+public class PurchaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +15,7 @@ public class Purchase {
     // Creacion de la relacion de muchos a uno entre dos tablas.
     @ManyToOne
     @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    private Customer customer;
+    private CustomerEntity customerEntity;
 
     private LocalDateTime date;
 
@@ -35,12 +35,12 @@ public class Purchase {
         this.idPurchase = idPurchase;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public CustomerEntity getCustomer() {
+        return customerEntity;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomer(CustomerEntity customerEntity) {
+        this.customerEntity = customerEntity;
     }
 
     public LocalDateTime getDate() {

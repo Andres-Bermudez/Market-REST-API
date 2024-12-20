@@ -1,10 +1,10 @@
-package com.platzi.Market.persistence.entity;
+package com.platzi.Market.persistence.entities;
 
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +16,7 @@ public class Product {
     // Creacion de la relacion muchos a uno entre dos tablas.
     @ManyToOne
     @JoinColumn(name = "id_category", insertable = false, updatable = false)
-    private Category category;
+    private CategoryEntity categoryEntity;
 
     @Column(name = "bar_code")
     private String barCode;
@@ -25,12 +25,13 @@ public class Product {
     private Double salesPrice;
 
     @Column(name = "stock_quantity")
-    private Integer stockQuantity;
+    private Long stockQuantity;
 
     private Boolean status;
 
 
-    // Getters and Setters
+    // Getters and Setters.
+
 
     public Long getIdProduct() {
         return idProduct;
@@ -48,12 +49,12 @@ public class Product {
         this.name = name;
     }
 
-    public Category getCategory() {
-        return category;
+    public CategoryEntity getCategoryEntity() {
+        return categoryEntity;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategoryEntity(CategoryEntity categoryEntity) {
+        this.categoryEntity = categoryEntity;
     }
 
     public String getBarCode() {
@@ -72,11 +73,11 @@ public class Product {
         this.salesPrice = salesPrice;
     }
 
-    public Integer getStockQuantity() {
+    public Long getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setStockQuantity(Integer stockQuantity) {
+    public void setStockQuantity(Long stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 

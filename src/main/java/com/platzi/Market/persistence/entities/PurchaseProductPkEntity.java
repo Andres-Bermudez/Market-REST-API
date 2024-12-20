@@ -1,11 +1,11 @@
-package com.platzi.Market.persistence.entity;
+package com.platzi.Market.persistence.entities;
 
 import java.io.Serializable;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
-public class PurchaseProductPK implements Serializable {
+public class PurchaseProductPkEntity implements Serializable {
 
     @Column(name = "id_purchase")
     private Long idPurchase;

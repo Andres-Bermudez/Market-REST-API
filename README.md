@@ -27,3 +27,5 @@ En este proyecto se usa Gradle como gestor de dependencias.
     mediante JPA.
 13. Utilizacion de Query Methods para realizar consultas SQL.
 14. Configurar la conexion con la base de datos por medio de variables de entorno.
+15. Agregar dependencia "mapstruct" y el plugin para IntelliJ.
+16. Crear los mappers que convierten una clase de entidad a una clase de dominio.
