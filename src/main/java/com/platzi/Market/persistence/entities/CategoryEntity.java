@@ -14,7 +14,6 @@ public class CategoryEntity {
     private String description;
     private Boolean status;
 
-
     // Getters and Setters
 
     public Long getIdCategory() {

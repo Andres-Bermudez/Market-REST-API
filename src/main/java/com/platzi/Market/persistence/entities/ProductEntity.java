@@ -29,9 +29,26 @@ public class ProductEntity {
 
     private Boolean status;
 
+    public ProductEntity() {
+    }
+
+    public ProductEntity(Long idProduct,
+                         String name,
+                         CategoryEntity categoryEntity,
+                         String barCode,
+                         Double salesPrice,
+                         Long stockQuantity
+    ) {
+        this.idProduct = idProduct;
+        this.name = name;
+        this.categoryEntity = categoryEntity;
+        this.barCode = barCode;
+        this.salesPrice = salesPrice;
+        this.stockQuantity = stockQuantity;
+        this.status = true;
+    }
 
     // Getters and Setters.
-
 
     public Long getIdProduct() {
         return idProduct;

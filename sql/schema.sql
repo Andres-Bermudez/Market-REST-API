@@ -2,7 +2,7 @@
 -- Tabla "CATEGORIAS"
 -- -----------------------------------------------------
 CREATE TABLE  categories (
-  "id_category" SERIAL NOT NULL,
+  "id_category" SERIAL,
   "description" VARCHAR(100) NOT NULL,
   "status" BOOLEAN NOT NULL,
 
@@ -13,7 +13,7 @@ CREATE TABLE  categories (
 -- Tabla "PRODUCTOS"
 -- -----------------------------------------------------
 CREATE TABLE  products (
-  "id_product" SERIAL NOT NULL,
+  "id_product" SERIAL,
   "name" VARCHAR(100) NULL,
   "id_category" BIGINT NOT NULL,
   "bar_code" VARCHAR(300) NOT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE  products (
 -- Tabla "CLIENTES"
 -- -----------------------------------------------------
 CREATE TABLE  customers (
-  "id_customer" SERIAL NOT NULL,
+  "id_customer" SERIAL ,
   "name" VARCHAR(100) NOT NULL,
   "lastname" VARCHAR(100) NOT NULL,
   "phone" BIGINT NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE  customers (
 -- Table "COMPRAS"
 -- -----------------------------------------------------
 CREATE TABLE  purchases (
-  "id_purchase" SERIAL NOT NULL,
+  "id_purchase" SERIAL,
   "id_customer" BIGINT NOT NULL,
   "date" TIMESTAMP NULL,
   "payment_method" CHAR(1) NOT NULL,

@@ -5,6 +5,8 @@ public class CategoryDomain {
     private String description;
     private Boolean active;
 
+    // Getters and Setters.
+
     public Long getCategoryId() {
         return categoryId;
     }

@@ -23,11 +23,4 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
                    WHERE stock_quantity <= :quantity;
                    """, nativeQuery = true)
     List<ProductEntity> findByStockQuantity(Long quantity);
-
-    @Query(value = """
-                   SELECT *
-                   FROM products
-                   WHERE id_category = :idCategory;
-                   """, nativeQuery = true)
-    boolean existsByCategory(Long idCategory);
 }

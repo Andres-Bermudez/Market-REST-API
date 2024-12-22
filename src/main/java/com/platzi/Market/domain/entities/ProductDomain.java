@@ -4,11 +4,13 @@ public class ProductDomain {
 
     private Long productId;
     private String name;
-    private CategoryDomain categoryDomain;
+    private CategoryDomain category;
     private double salesPrice;
-    private int stockQuantity;
-    private Boolean active;
+    private Long stockQuantity;
+    private Boolean status;
 
+    public ProductDomain() {
+    }
 
     // Getters and Setters.
 
@@ -29,11 +31,11 @@ public class ProductDomain {
     }
 
     public CategoryDomain getCategoryDomain() {
-        return categoryDomain;
+        return category;
     }
 
     public void setCategoryDomain(CategoryDomain categoryDomain) {
-        this.categoryDomain = categoryDomain;
+        this.category = categoryDomain;
     }
 
     public Double getSalesPrice() {
@@ -44,19 +46,23 @@ public class ProductDomain {
         this.salesPrice = salesPrice;
     }
 
-    public int getStockQuantity() {
+    public long getStockQuantity() {
         return stockQuantity;
     }
 
-    public void setStockQuantity(int stockQuantity) {
+    public void setStockQuantity(long stockQuantity) {
         this.stockQuantity = stockQuantity;
     }
 
-    public Boolean getActive() {
-        return active;
+    public Boolean getStatus() {
+        return status;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public void setStockQuantity(Long stockQuantity) {
+        this.stockQuantity = stockQuantity;
     }
 }
