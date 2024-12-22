@@ -14,6 +14,15 @@ public class CategoryEntity {
     private String description;
     private Boolean status;
 
+    public CategoryEntity() {
+    }
+
+    public CategoryEntity(Long idCategory, String description) {
+        this.idCategory = idCategory;
+        this.description = description;
+        this.status = true;
+    }
+
     // Getters and Setters
 
     public Long getIdCategory() {

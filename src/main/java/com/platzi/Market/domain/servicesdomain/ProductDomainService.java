@@ -1,16 +1,16 @@
-package com.platzi.Market.domain.services;
+package com.platzi.Market.domain.servicesdomain;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.platzi.Market.domain.dto.ProductSavedDTO;
-import com.platzi.Market.domain.dto.ProductReceivedDTO;
 import com.platzi.Market.exceptions.ValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.platzi.Market.persistence.methods.DomainEntitiesMethods;
+import com.platzi.Market.domain.dto.productdto.ProductSavedDTO;
+import com.platzi.Market.persistence.methods.MethodsProductPersistence;
+import com.platzi.Market.domain.dto.productdto.ProductReceivedDTO;
 import com.platzi.Market.persistence.services.ProductPersistenceService;
 
 @Service
-public class ProductDomainService implements DomainEntitiesMethods {
+public class ProductDomainService implements MethodsProductPersistence {
 
     @Autowired
     private ProductPersistenceService productPersistenceService;

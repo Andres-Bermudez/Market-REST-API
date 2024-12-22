@@ -15,7 +15,7 @@ public class ProductEntity {
 
     // Creacion de la relacion muchos a uno entre dos tablas.
     @ManyToOne
-    @JoinColumn(name = "id_category", insertable = false, updatable = false)
+    @JoinColumn(name = "id_category")
     private CategoryEntity categoryEntity;
 
     @Column(name = "bar_code")
@@ -28,6 +28,7 @@ public class ProductEntity {
     private Long stockQuantity;
 
     private Boolean status;
+
 
     public ProductEntity() {
     }

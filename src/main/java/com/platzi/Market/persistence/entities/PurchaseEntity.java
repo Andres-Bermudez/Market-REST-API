@@ -12,18 +12,34 @@ public class PurchaseEntity {
     @Column(name = "id_purchase")
     private Long idPurchase;
 
-    // Creacion de la relacion de muchos a uno entre dos tablas.
-    @ManyToOne
-    @JoinColumn(name = "id_customer", insertable = false, updatable = false)
-    private CustomerEntity customerEntity;
-
     private LocalDateTime date;
+
+    @Column(name = "products_list")
+    private String productsList;
+
+    @Column(name = "id_customer")
+    private String idCustomer;
+
+    private Long total;
 
     @Column(name = "payment_method")
     private String paymentMethod;
 
-    private String comment;
-    private String status;
+    public PurchaseEntity() {
+    }
+
+    public PurchaseEntity(String idCustomer,
+                          String productsList,
+                          Long total,
+                          String paymentMethod
+    ) {
+        this.idCustomer = idCustomer;
+        this.date = LocalDateTime.now();
+        this.productsList = productsList;
+        this.total = total;
+        this.paymentMethod = paymentMethod;
+    }
+
 
     // Getters and Setters
 
@@ -35,14 +51,6 @@ public class PurchaseEntity {
         this.idPurchase = idPurchase;
     }
 
-    public CustomerEntity getCustomer() {
-        return customerEntity;
-    }
-
-    public void setCustomer(CustomerEntity customerEntity) {
-        this.customerEntity = customerEntity;
-    }
-
     public LocalDateTime getDate() {
         return date;
     }
@@ -51,27 +59,35 @@ public class PurchaseEntity {
         this.date = date;
     }
 
+    public String getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(String productsList) {
+        this.productsList = productsList;
+    }
+
+    public String getIdCustomer() {
+        return idCustomer;
+    }
+
+    public void setIdCustomer(String idCustomer) {
+        this.idCustomer = idCustomer;
+    }
+
+    public Long getTotal() {
+        return total;
+    }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
+
     public String getPaymentMethod() {
         return paymentMethod;
     }
 
     public void setPaymentMethod(String paymentMethod) {
         this.paymentMethod = paymentMethod;
-    }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
     }
 }

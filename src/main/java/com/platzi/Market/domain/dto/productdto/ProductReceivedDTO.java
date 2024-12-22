@@ -1,4 +1,4 @@
-package com.platzi.Market.domain.dto;
+package com.platzi.Market.domain.dto.productdto;
 
 public record ProductReceivedDTO(
         String name,

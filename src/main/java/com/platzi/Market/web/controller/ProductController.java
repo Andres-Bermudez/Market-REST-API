@@ -4,11 +4,11 @@ import java.net.URI;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.platzi.Market.domain.dto.ProductSavedDTO;
-import com.platzi.Market.domain.dto.ProductReceivedDTO;
 import org.springframework.web.util.UriComponentsBuilder;
-import com.platzi.Market.domain.services.ProductDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.platzi.Market.domain.dto.productdto.ProductSavedDTO;
+import com.platzi.Market.domain.dto.productdto.ProductReceivedDTO;
+import com.platzi.Market.domain.servicesdomain.ProductDomainService;
 
 @RestController
 @RequestMapping("/products")

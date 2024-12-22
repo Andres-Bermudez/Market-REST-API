@@ -7,27 +7,43 @@ import jakarta.persistence.*;
 public class CustomerEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_customer")
-    private Long idCustomer;
+    private String idCustomer;
 
     private String name;
 
     @Column(name = "last_name")
     private String lastName;
 
-    private Long phone;
+    private String phone;
     private String address;
     private String email;
 
+    public CustomerEntity() {
+    }
+
+    public CustomerEntity(String id,
+                          String name,
+                          String lastName,
+                          String phone,
+                          String address,
+                          String email
+    ) {
+        this.idCustomer = id;
+        this.name = name;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.address = address;
+        this.email = email;
+    }
 
     // Getters and Setters.
 
-    public Long getIdCustomer() {
+    public String getIdCustomer() {
         return idCustomer;
     }
 
-    public void setIdCustomer(Long idCustomer) {
+    public void setIdCustomer(String idCustomer) {
         this.idCustomer = idCustomer;
     }
 
@@ -47,11 +63,11 @@ public class CustomerEntity {
         this.lastName = lastName;
     }
 
-    public Long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

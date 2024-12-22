@@ -1,10 +1,10 @@
 package com.platzi.Market.persistence.methods;
 
 import java.util.List;
-import com.platzi.Market.domain.dto.ProductSavedDTO;
-import com.platzi.Market.domain.dto.ProductReceivedDTO;
+import com.platzi.Market.domain.dto.productdto.ProductSavedDTO;
+import com.platzi.Market.domain.dto.productdto.ProductReceivedDTO;
 
-public interface DomainEntitiesMethods {
+public interface MethodsProductPersistence {
 
     List<ProductSavedDTO> getAllProducts();
     List<ProductSavedDTO> getProductsByIdCategory(Long idCategory);

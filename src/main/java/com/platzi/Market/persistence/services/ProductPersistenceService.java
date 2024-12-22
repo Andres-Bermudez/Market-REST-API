@@ -2,18 +2,18 @@ package com.platzi.Market.persistence.services;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.platzi.Market.domain.dto.ProductSavedDTO;
-import com.platzi.Market.domain.dto.ProductReceivedDTO;
 import com.platzi.Market.exceptions.ValidationException;
 import com.platzi.Market.persistence.entities.ProductEntity;
 import com.platzi.Market.persistence.entities.CategoryEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.platzi.Market.persistence.methods.DomainEntitiesMethods;
+import com.platzi.Market.domain.dto.productdto.ProductSavedDTO;
+import com.platzi.Market.persistence.methods.MethodsProductPersistence;
+import com.platzi.Market.domain.dto.productdto.ProductReceivedDTO;
 import com.platzi.Market.persistence.repositories.ProductRepository;
 import com.platzi.Market.persistence.repositories.CategoryRepository;
 
 @Service
-public class ProductPersistenceService implements DomainEntitiesMethods {
+public class ProductPersistenceService implements MethodsProductPersistence {
 
     @Autowired
     private ProductRepository productRepository;
@@ -82,7 +82,8 @@ public class ProductPersistenceService implements DomainEntitiesMethods {
         ProductEntity productEntity = new ProductEntity(
                 null,
                 productReceivedDTO.name(),
-                categoryEntity,
+                new CategoryEntity(categoryEntity.getIdCategory(),
+                                   categoryEntity.getDescription()),
                 productReceivedDTO.barCode(),
                 productReceivedDTO.salesPrice(),
                 productReceivedDTO.stockQuantity()
