@@ -1,15 +1,35 @@
-# Market
+# Market REST API
+
+Este proyecto es una 🛒 API REST diseñada para un supermercado,
+que permite la gestión de 👥 clientes, 🛍️ productos y 🛒 compras.
+
+La API fue desarrollada en ☕ Java con 🌿 Spring Boot y utiliza 
+PostgreSQL 🐘 como base de datos y Gradle como gestor de 
+dependencias. Ofrece funcionalidades como:
+
+- 📋 Ver la lista de productos disponibles
+- 🔍 Buscar productos por categoría, stock o ID
+- ➕ Crear y ❌ eliminar productos
+
+También permite gestionar las compras:
+
+- 🛒 Obtener las compras realizadas
+- 🔍 Buscar compras por ID de cliente o compra
+- ➕ Crear y ❌ eliminar compras
+
+El proyecto sigue una arquitectura orientada al dominio y
+aplica patrones de diseño como DAO y Repository. Además, 
+utiliza Spring Data JPA para interactuar con la base de datos,
+incluyendo métodos personalizados en JPQL.
 
 - Esquema de la base de datos:
 ![schemaDB.png](images/schemaDB.png)
 
-Este proyecto esta creado con una arquitectura por capas
-orientada al dominio.
+- Lista de productos:
+![listProducts.png](images/listProducts.png)
 
-Se creo un archivo .properties para un ambiente de desarrollo
-y otro diferente para un ambiente de produccion.
-
-En este proyecto se usa Gradle como gestor de dependencias.
+- Busqueda de productos por id:
+![findProductById.png](images/findProductById.png)
 
 ### Seguimiento del proyecto:
 1. Creacion del proyecto con Spring Boot.
